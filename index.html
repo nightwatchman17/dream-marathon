@@ -357,6 +357,7 @@
       <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
         <a href="#spirit">Our spirit</a>
         <a href="#event">The event</a>
+        <a href="gallery.html">Gallery</a>
         <a class="nav-cta" href="https://forms.gle/8o8HJQmVtt72QehG7" target="_blank" rel="noopener noreferrer">Register your interest <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
@@ -378,6 +379,37 @@
         </a>
         <span class="news-index" aria-hidden="true">01 / 01</span>
       </section>
+
+      <section class="countdown" aria-labelledby="countdown-title">
+        <div class="countdown-copy">
+          <p class="section-kicker">Save the date</p>
+          <h2 class="countdown-title" id="countdown-title">Dream Marathon 1.0 begins in</h2>
+          <p class="countdown-date">
+            <time datetime="2026-12-04T00:00:00+06:00">4 December 2026</time>
+            <span aria-hidden="true">·</span>
+            <span data-countdown-note>The countdown is on</span>
+          </p>
+        </div>
+        <div class="countdown-timer" id="race-countdown" role="timer" aria-label="Time remaining until Dream Marathon 1.0 on 4 December 2026">
+          <div class="countdown-unit">
+            <span class="countdown-value" data-unit="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-value" data-unit="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-value" data-unit="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-value" data-unit="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+      </section>
+
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">A community that moves together</p>
@@ -478,24 +510,6 @@
       <a class="back-top" href="#top">Back to top ↑</a>
     </footer>
   </div>
-  <script>
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navigation = document.querySelector("#main-navigation");
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
-      navigation.classList.toggle("is-open", !isOpen);
-    });
-
-    navigation.addEventListener("click", (event) => {
-      if (event.target instanceof HTMLAnchorElement && window.matchMedia("(max-width: 680px)").matches) {
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation");
-        navigation.classList.remove("is-open");
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

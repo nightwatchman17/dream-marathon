@@ -10,6 +10,23 @@ Visit the live site:
 
 The site is a static frontend. Registration details are collected through [the Google Form](https://forms.gle/8o8HJQmVtt72QehG7); this project does not use a database.
 
+## Gallery
+
+Photos live in the `gallery/` folder and are listed in `gallery/photos.js`. To add photos:
+
+1. Copy the images into `gallery/`.
+2. Run:
+   ```
+   node scripts/build-gallery.mjs
+   ```
+3. Adjust captions in `gallery/photos.js` if the generated ones need rewording. Re-running the script keeps existing captions.
+
+Open `gallery.html` or click **Gallery** in the site navigation to view them. Images keep their natural aspect ratio, stay centered inside their frame, and are shown with a caption.
+
+## Countdown
+
+The homepage shows a live countdown to Dream Marathon 1.0 right after the big news banner. It targets **4 December 2026, 00:00 Bangladesh time**; change `RACE_START` in `script.js` when the exact start time is confirmed.
+
 ## Run locally
 
 Open `index.html` in a web browser. The site uses the images in `photos/` and its stylesheet in `style.css`.

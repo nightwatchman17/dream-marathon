@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a17">
+  <meta name="description" content="Photos and moments from the Dream Marathon Spirit community. Dream Marathon 1.0 is coming on 4 December 2026.">
+  <title>Gallery — Dream Marathon Spirit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <a class="brand" href="index.html" aria-label="Dream Marathon Spirit home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M13.1 4.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2ZM8.5 9.4l2.8-2.7 3.2 1.7 2.7.3-.2 2-3.4-.4-2.1-1.1-2.1 2.2-1.3 3.7-2-.7 1.4-4.2 1-1.1-1.6 1.1-2.7.3-.2-2 2.4-.3 2.1-1.8Zm4.3 3.9 2.3 2.3 2.2 4.4-1.8.9-2-4-2.3-2.2-1.8 2.8-1.2 4.2-1.9-.6 1.2-4.6 2.8-4.2 2.5 1Z" fill="currentColor" transform="translate(2 2) scale(.83)"/></svg>
+        </span>
+        <span class="brand-name"><span>Dream Marathon</span><span>Spirit</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+        <a href="index.html#spirit">Our spirit</a>
+        <a href="index.html#event">The event</a>
+        <a class="is-active" href="gallery.html" aria-current="page">Gallery</a>
+        <a class="nav-cta" href="https://forms.gle/8o8HJQmVtt72QehG7" target="_blank" rel="noopener noreferrer">Register your interest <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main class="gallery-main">
+      <header class="gallery-head">
+        <p class="section-kicker">The people behind the miles</p>
+        <h1>Our running <em>spirit.</em></h1>
+        <p class="gallery-intro">Moments from the Dream Marathon Spirit community — the early starts, the shared miles, and the smiles that make every step worth it.</p>
+        <p class="gallery-meta" data-gallery-count hidden></p>
+      </header>
+
+      <div class="gallery-grid" data-gallery-grid></div>
+
+      <div class="gallery-empty" data-gallery-empty>
+        <strong>Photos are on their way</strong>
+        <p>Our marathon moments will appear here soon. In the meantime, be part of the first chapter of Dream Marathon Spirit.</p>
+      </div>
+
+      <section class="gallery-cta" aria-labelledby="gallery-cta-title">
+        <div>
+          <h2 id="gallery-cta-title">Be in the next photo.</h2>
+          <p>Dream Marathon 1.0 · 4 December 2026 · Coming soon</p>
+        </div>
+        <a class="button" href="https://forms.gle/8o8HJQmVtt72QehG7" target="_blank" rel="noopener noreferrer">
+          Register your interest
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="index.html">Dream Marathon Spirit</a>
+      <p class="footer-note">Made for the miles ahead. Dream Marathon 1.0 · Coming soon</p>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </footer>
+  </div>
+  <script src="gallery/photos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

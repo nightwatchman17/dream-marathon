@@ -181,6 +181,72 @@ body {
   letter-spacing: .12em;
 }
 
+.countdown {
+  margin: 20px 7.2% 0;
+  padding: 27px 34px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid rgba(201, 255, 83, .22);
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 4% 0%, rgba(201, 255, 83, .1), transparent 20rem),
+    #15211c;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .03);
+}
+
+.countdown .section-kicker { margin: 0 0 9px; }
+.countdown-title {
+  margin: 0 0 8px;
+  font-size: clamp(21px, 2.5vw, 29px);
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+.countdown-date {
+  margin: 0;
+  color: #a9b7ab;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.countdown-date time { color: #dbe6d9; }
+
+.countdown-timer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(80px, 1fr));
+  gap: 10px;
+}
+.countdown-unit {
+  min-width: 80px;
+  padding: 14px 10px 12px;
+  border: 1px solid #35453b;
+  border-radius: 13px;
+  background: rgba(9, 16, 13, .5);
+  text-align: center;
+}
+.countdown-value {
+  display: block;
+  color: var(--green);
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.05em;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-label {
+  display: block;
+  margin-top: 8px;
+  color: #9dac9f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.countdown[data-arrived="true"] .countdown-date { color: var(--green); }
+
 .hero {
   min-height: 588px;
   padding-top: 60px;
@@ -343,6 +409,15 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 900px) {
   .big-news { margin-right: 5%; margin-left: 5%; padding: 26px; gap: 17px; }
   .news-message h2 { font-size: clamp(24px, 3.8vw, 34px); }
+  .nav-links { gap: 24px; }
+  .countdown {
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 25px 26px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .countdown-timer { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 540px; }
   .community-photos { padding-right: 5%; padding-left: 5%; }
   .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -370,6 +445,18 @@ a:focus-visible, button:focus-visible {
   .news-message h2 { max-width: 440px; font-size: clamp(29px, 8.5vw, 39px); }
   .news-link { grid-column: 1; justify-self: start; min-width: 175px; min-height: 62px; padding: 0 25px; font-size: 15px; }
   .news-index { right: 17px; bottom: 15px; }
+  .countdown {
+    margin-top: 17px;
+    padding: 22px 18px 24px;
+    border-radius: 15px;
+    gap: 19px;
+  }
+  .countdown-title { font-size: clamp(20px, 5.6vw, 25px); }
+  .countdown-date { font-size: 10px; }
+  .countdown-timer { gap: 7px; }
+  .countdown-unit { min-width: 0; padding: 11px 4px 9px; border-radius: 10px; }
+  .countdown-value { font-size: clamp(24px, 7.2vw, 32px); }
+  .countdown-label { margin-top: 6px; font-size: 8px; letter-spacing: .12em; }
   .hero { padding-top: 43px; }
   .hero-visual {
     aspect-ratio: 2.1 / 1;
