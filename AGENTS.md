@@ -40,7 +40,7 @@ To refresh the gallery after adding photos, run:
 ```
 node scripts/build-gallery.mjs
 ```
-It rewrites `gallery/photos.js` and keeps existing captions.
+It rewrites `gallery/photos.js` and keeps existing captions. Captions can also be written in `gallery/captions.txt` using `file name - caption` lines.
 
 ### Deployment
 - **Live site**: https://nightwatchman17.github.io/Dream-Marathon/
