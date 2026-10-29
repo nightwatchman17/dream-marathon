@@ -16,6 +16,6 @@ window.DREAM_MARATHON_GALLERY = [
   },
   {
     "src": "gallery/img 0004.jpg",
-    "caption": "Runner: Faruqul Isalam"
+    "caption": "Runner: Faruqul Islam"
   }
 ];

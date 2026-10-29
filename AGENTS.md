@@ -43,7 +43,7 @@ node scripts/build-gallery.mjs
 It rewrites `gallery/photos.js` and keeps existing captions. Captions can also be written in `gallery/captions.txt` using `file name - caption` lines.
 
 ### Deployment
-- **Live site**: https://nightwatchman17.github.io/Dream-Marathon/
+- **Live site**: https://nightwatchman17.github.io/dream-marathon/
 - **GitHub Pages**: Deploys from `main` branch root (`/`). Commits to `main` auto-deploy.
 
 ## Project-Specific Notes

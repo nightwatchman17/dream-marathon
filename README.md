@@ -6,7 +6,7 @@ A responsive community website for **Dream Marathon Spirit**, announcing Dream M
 
 Visit the live site:
 
-**https://nightwatchman17.github.io/Dream-Marathon/**
+**https://nightwatchman17.github.io/dream-marathon/**
 
 The site is a static frontend. Registration details are collected through [the Google Form](https://forms.gle/8o8HJQmVtt72QehG7); this project does not use a database.
 
