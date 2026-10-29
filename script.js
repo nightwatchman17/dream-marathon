@@ -71,61 +71,143 @@ if (countdown) {
 
 /* Gallery ----------------------------------------------------------------- */
 /* Photos come from gallery/photos.js (run scripts/build-gallery.mjs after
-   adding files to the gallery folder). Images keep their natural ratio. */
-const galleryGrid = document.querySelector("[data-gallery-grid]");
+   adding files to the gallery folder). A thumbnail strip sits at the top and
+   each photo is shown large, centered, one after another, keeping its ratio. */
+const galleryStrip = document.querySelector("[data-gallery-strip]");
+const galleryViewer = document.querySelector("[data-gallery-viewer]");
 const galleryEmpty = document.querySelector("[data-gallery-empty]");
 const galleryCount = document.querySelector("[data-gallery-count]");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-if (galleryGrid) {
+if (galleryStrip && galleryViewer) {
   const photos = Array.isArray(window.DREAM_MARATHON_GALLERY) ? window.DREAM_MARATHON_GALLERY : [];
   const entries = photos.filter((photo) => photo && typeof photo.src === "string" && photo.src.trim());
 
   if (entries.length) {
-    const fragment = document.createDocumentFragment();
+    const thumbs = document.createDocumentFragment();
+    const shots = document.createDocumentFragment();
+
+    const updateCount = () => {
+      const total = galleryViewer.querySelectorAll(".gallery-shot").length;
+      if (galleryCount) {
+        galleryCount.textContent = `${total} ${total === 1 ? "photo" : "photos"}`;
+        galleryCount.hidden = total === 0;
+      }
+      if (total === 0) {
+        galleryStrip.hidden = true;
+        galleryViewer.hidden = true;
+        if (galleryEmpty) galleryEmpty.hidden = false;
+      }
+    };
+
+    const setActive = (id) => {
+      const thumbnails = galleryStrip.querySelectorAll(".gallery-thumb");
+      let activeThumb = null;
+      thumbnails.forEach((thumb) => {
+        const isActive = thumb.dataset.target === id;
+        thumb.classList.toggle("is-active", isActive);
+        if (isActive) {
+          activeThumb = thumb;
+          thumb.setAttribute("aria-current", "true");
+        } else {
+          thumb.removeAttribute("aria-current");
+        }
+      });
+      if (activeThumb) {
+        galleryStrip.scrollTo({
+          left: activeThumb.offsetLeft - (galleryStrip.clientWidth - activeThumb.offsetWidth) / 2,
+          behavior: reducedMotion.matches ? "auto" : "smooth",
+        });
+      }
+    };
 
     entries.forEach((photo, index) => {
       const caption = typeof photo.caption === "string" && photo.caption.trim()
         ? photo.caption.trim()
         : `Dream Marathon Spirit photo ${index + 1}`;
+      const number = String(index + 1).padStart(2, "0");
+      const id = `gallery-photo-${index + 1}`;
 
-      const card = document.createElement("figure");
-      card.className = "gallery-card";
+      const shot = document.createElement("figure");
+      shot.className = "gallery-shot";
+      shot.id = id;
 
-      const media = document.createElement("div");
-      media.className = "gallery-media";
+      const frame = document.createElement("div");
+      frame.className = "gallery-shot-frame";
 
       const image = document.createElement("img");
       image.src = photo.src;
       image.alt = caption;
-      image.loading = "lazy";
+      image.loading = index === 0 ? "eager" : "lazy";
       image.decoding = "async";
-      image.addEventListener("error", () => {
-        card.remove();
-        if (!galleryGrid.querySelector(".gallery-card") && galleryEmpty) {
-          galleryGrid.hidden = true;
-          galleryEmpty.hidden = false;
-        }
-      });
 
-      media.append(image);
+      frame.append(image);
 
       const captionRow = document.createElement("figcaption");
-      const number = document.createElement("span");
-      number.textContent = String(index + 1).padStart(2, "0");
-      const label = document.createElement("span");
-      label.textContent = caption;
-      captionRow.append(number, label);
+      captionRow.className = "gallery-shot-caption";
+      const numberLabel = document.createElement("span");
+      numberLabel.className = "gallery-shot-number";
+      numberLabel.textContent = number;
+      const captionText = document.createElement("span");
+      captionText.textContent = caption;
+      captionRow.append(numberLabel, captionText);
 
-      card.append(media, captionRow);
-      fragment.append(card);
+      shot.append(frame, captionRow);
+      shots.append(shot);
+
+      const thumb = document.createElement("button");
+      thumb.type = "button";
+      thumb.className = "gallery-thumb";
+      thumb.dataset.target = id;
+      thumb.setAttribute("aria-label", `Show photo ${index + 1}: ${caption}`);
+
+      const thumbImage = document.createElement("img");
+      thumbImage.src = photo.src;
+      thumbImage.alt = "";
+      thumbImage.loading = "lazy";
+      thumbImage.decoding = "async";
+      thumb.append(thumbImage);
+
+      thumb.addEventListener("click", () => {
+        const target = document.getElementById(id);
+        if (!target) return;
+        target.scrollIntoView({
+          behavior: reducedMotion.matches ? "auto" : "smooth",
+          block: "center",
+        });
+        setActive(id);
+      });
+
+      const removeEntry = () => {
+        thumb.remove();
+        shot.remove();
+        updateCount();
+        const first = galleryViewer.querySelector(".gallery-shot");
+        if (first) setActive(first.id);
+      };
+      image.addEventListener("error", removeEntry);
+      thumbImage.addEventListener("error", removeEntry);
+
+      thumbs.append(thumb);
     });
 
-    galleryGrid.append(fragment);
-    galleryGrid.hidden = false;
+    galleryStrip.append(thumbs);
+    galleryViewer.append(shots);
+    galleryStrip.hidden = false;
+    galleryViewer.hidden = false;
     if (galleryEmpty) galleryEmpty.hidden = true;
-    if (galleryCount) {
-      galleryCount.textContent = `${entries.length} ${entries.length === 1 ? "photo" : "photos"}`;
-      galleryCount.hidden = false;
+    updateCount();
+
+    setActive(entries.length ? "gallery-photo-1" : "");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((observed) => {
+        observed.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, { rootMargin: "-45% 0px -45% 0px", threshold: 0 });
+
+      galleryViewer.querySelectorAll(".gallery-shot").forEach((shot) => observer.observe(shot));
     }
   }
 }

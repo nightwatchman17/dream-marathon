@@ -25,7 +25,7 @@ Photos live in the `gallery/` folder and are listed in `gallery/photos.js`. To a
    ```
 4. Adjust captions in `gallery/photos.js` if the generated ones need rewording. Re-running the script keeps existing captions.
 
-Open `gallery.html` or click **Gallery** in the site navigation to view them. Images keep their natural aspect ratio, stay centered inside their frame, and are shown with a caption.
+Open `gallery.html` or click **Gallery** in the site navigation to view them. A thumbnail strip at the top lets visitors jump between photos, and each photo is displayed large and centered, one after another, with a caption below. Images keep their natural aspect ratio.
 
 ## Countdown
 
