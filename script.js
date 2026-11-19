@@ -38,7 +38,7 @@ if (menuToggle && navigation) {
 /* Countdown --------------------------------------------------------------- */
 /* Dream Marathon 1.0 starts on 4 December 2026, 00:00 Bangladesh time.
    Change RACE_START below when the exact start time is confirmed. */
-const RACE_START = new Date("2026-12-04T00:00:00+06:00");
+const RACE_START = new Date("2026-12-11T00:00:00+06:00");
 const countdown = document.querySelector("#race-countdown");
 
 if (countdown) {
