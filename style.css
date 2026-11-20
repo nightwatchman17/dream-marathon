@@ -281,29 +281,31 @@ body {
   grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
   align-items: center;
   gap: 30px;
-  border: 1px solid #d9e3d3;
+  border: 1px solid rgba(147, 184, 255, .18);
   border-radius: 18px;
-  color: #14253f;
+  color: #f3f7ff;
   background:
-    radial-gradient(ellipse at 90% -10%, rgba(37, 99, 235, .08), transparent 22rem),
-    radial-gradient(ellipse at 2% 120%, rgba(201, 255, 83, .15), transparent 24rem),
-    linear-gradient(135deg, #f8faf6 0%, #eff3ea 58%, #e9efe4 100%);
-  box-shadow: 0 14px 34px rgba(6, 18, 13, .2);
+    radial-gradient(ellipse at 88% -20%, rgba(59, 130, 246, .18), transparent 24rem),
+    radial-gradient(ellipse at 0% 130%, rgba(201, 255, 83, .08), transparent 22rem),
+    linear-gradient(135deg, #15263e 0%, #101a2b 55%, #101d24 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(201, 255, 83, .22),
+    0 18px 40px rgba(4, 12, 22, .38);
 }
 .slots .section-kicker {
   margin: 0 0 9px;
-  color: #1d4ed8;
+  color: #93b8ff;
 }
 .slots-title {
   margin: 0 0 8px;
-  color: #14253f;
+  color: #f3f7ff;
   font-size: clamp(21px, 2.5vw, 29px);
   line-height: 1.15;
   letter-spacing: -.045em;
 }
 .slots-note {
   margin: 0;
-  color: #53677f;
+  color: #9fb0c9;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .07em;
@@ -316,12 +318,12 @@ body {
 }
 .slot-stat {
   padding: 2px 18px;
-  border-left: 1px solid rgba(20, 37, 63, .12);
+  border-left: 1px solid rgba(159, 176, 201, .18);
 }
 .slot-stat:first-child { padding-left: 0; border-left: 0; }
 .slot-stat-label {
   display: block;
-  color: #53677f;
+  color: #9fb0c9;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -337,7 +339,7 @@ body {
   letter-spacing: -.05em;
   font-variant-numeric: tabular-nums;
 }
-.slot-stat--open .slot-stat-value { color: #1d4ed8; }
+.slot-stat--open .slot-stat-value { color: #93b8ff; }
 
 .slot-progress { margin-top: 23px; }
 .slot-progress-head {
@@ -346,14 +348,14 @@ body {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  color: #53677f;
+  color: #9fb0c9;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 .slot-progress-head strong {
-  color: #1d4ed8;
+  color: #93b8ff;
   font-family: var(--font-display);
   font-size: 15px;
   letter-spacing: -.02em;
@@ -362,15 +364,15 @@ body {
   height: 8px;
   overflow: hidden;
   border-radius: 99px;
-  background: rgba(20, 37, 63, .1);
+  background: rgba(159, 176, 201, .18);
 }
 .slot-progress-fill {
   display: block;
   width: 0;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #60a5fa, #1d4ed8);
-  box-shadow: 0 0 14px rgba(29, 78, 216, .3);
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  box-shadow: 0 0 16px rgba(96, 165, 250, .38);
   transition: width .6s ease;
 }
 
