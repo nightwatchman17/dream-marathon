@@ -1,6 +1,6 @@
 # Dream Marathon Spirit
 
-A responsive community website for **Dream Marathon Spirit**, announcing Dream Marathon 1.0 and inviting runners to register.
+A responsive community website for **Dream Marathon Spirit**, announcing Dream Marathon 2026 and inviting runners to register.
 
 ## Live website
 
@@ -8,7 +8,11 @@ Visit the live site:
 
 **https://nightwatchman17.github.io/dream-marathon/**
 
-The site is a static frontend. Registration details are collected through [the Google Form](https://forms.gle/8o8HJQmVtt72QehG7); this project does not use a database.
+The site is a static frontend. Registration details are collected through [the Google Form](https://forms.gle/8o8HJQmVtt72QehG7); this project does not use a database. The Facebook button in the header links to [the community page](https://web.facebook.com/profile.php?id=61596623797076).
+
+## Registration slots
+
+The panel just below the homepage countdown shows total slots, booked slots, slots left, and the percentage still available. To update it, change `data-total` and `data-booked` on the `.slots` section in `index.html` — the displayed numbers and progress bar are calculated automatically. Current values: 200 total, 90 booked, 110 left (55% remaining).
 
 ## Gallery
 
@@ -29,7 +33,7 @@ Open `gallery.html` or click **Gallery** in the site navigation to view them. A 
 
 ## Countdown
 
-The homepage shows a live countdown to Dream Marathon 1.0 right after the big news banner. It targets **4 December 2026, 00:00 Bangladesh time**; change `RACE_START` in `script.js` when the exact start time is confirmed.
+The homepage shows a live countdown to Dream Marathon 2026 right after the big news banner. It targets **11 December 2026, 00:00 Bangladesh time**; change `RACE_START` in `script.js` when the exact start time is confirmed.
 
 ## Run locally
 

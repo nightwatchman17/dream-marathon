@@ -36,7 +36,7 @@ if (menuToggle && navigation) {
 }
 
 /* Countdown --------------------------------------------------------------- */
-/* Dream Marathon 1.0 starts on 4 December 2026, 00:00 Bangladesh time.
+/* Dream Marathon 2026 starts on 11 December 2026, 00:00 Bangladesh time.
    Change RACE_START below when the exact start time is confirmed. */
 const RACE_START = new Date("2026-12-11T00:00:00+06:00");
 const countdown = document.querySelector("#race-countdown");
@@ -67,6 +67,38 @@ if (countdown) {
 
   tick();
   setInterval(tick, 1000);
+}
+
+/* Slot availability ------------------------------------------------------ */
+/* Update data-total / data-booked on .slots in index.html when numbers change. */
+const slotsPanel = document.querySelector(".slots[data-total][data-booked]");
+
+if (slotsPanel) {
+  const total = Number(slotsPanel.dataset.total);
+  const booked = Number(slotsPanel.dataset.booked);
+
+  if (Number.isFinite(total) && total > 0 && Number.isFinite(booked) && booked >= 0) {
+    const left = Math.max(total - booked, 0);
+    const percent = Math.round((left / total) * 100);
+
+    const setText = (selector, value) => {
+      const element = slotsPanel.querySelector(selector);
+      if (element) element.textContent = value;
+    };
+    setText("[data-slots-total]", String(total));
+    setText("[data-slots-booked]", String(booked));
+    setText("[data-slots-left]", String(left));
+    setText("[data-slots-percent]", `${percent}%`);
+
+    const bar = slotsPanel.querySelector("[data-slots-bar]");
+    if (bar) {
+      bar.setAttribute("aria-valuemax", String(total));
+      bar.setAttribute("aria-valuenow", String(left));
+      bar.setAttribute("aria-valuetext", `${left} of ${total} slots left, ${percent}% remaining`);
+    }
+    const fill = slotsPanel.querySelector("[data-slots-fill]");
+    if (fill) fill.style.width = `${Math.min(percent, 100)}%`;
+  }
 }
 
 /* Gallery ----------------------------------------------------------------- */

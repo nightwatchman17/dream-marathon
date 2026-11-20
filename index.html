@@ -354,12 +354,17 @@
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
-      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
-        <a href="#spirit">Our spirit</a>
-        <a href="#event">The event</a>
-        <a href="gallery.html">Gallery</a>
-        <a class="nav-cta" href="https://forms.gle/8o8HJQmVtt72QehG7" target="_blank" rel="noopener noreferrer">Register your interest <span aria-hidden="true">↗</span></a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="#spirit">Our spirit</a>
+          <a href="#event">The event</a>
+          <a href="gallery.html">Gallery</a>
+          <a class="nav-cta" href="https://forms.gle/8o8HJQmVtt72QehG7" target="_blank" rel="noopener noreferrer">Register your interest <span aria-hidden="true">↗</span></a>
+        </nav>
+        <a class="social-link" href="https://web.facebook.com/profile.php?id=61596623797076" target="_blank" rel="noopener noreferrer" aria-label="Dream Marathon Spirit on Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.29-.04-1.27-.13-2.42-.13-2.4 0-4.04 1.47-4.04 4.16v2.27H7.5V13h2.74v8h3.26Z"/></svg>
+        </a>
+      </div>
     </header>
 
     <main>
@@ -406,6 +411,39 @@
           <div class="countdown-unit">
             <span class="countdown-value" data-unit="seconds">00</span>
             <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slots" aria-labelledby="slots-title" data-total="200" data-booked="90">
+        <div class="slots-copy">
+          <p class="section-kicker">Registration snapshot</p>
+          <h2 class="slots-title" id="slots-title">Your spot is waiting.</h2>
+          <p class="slots-note">Dream Marathon 2026 · Limited to 200 runners</p>
+        </div>
+        <div class="slots-details">
+          <div class="slot-stats">
+            <div class="slot-stat">
+              <span class="slot-stat-label">Total slots</span>
+              <strong class="slot-stat-value" data-slots-total>200</strong>
+            </div>
+            <div class="slot-stat">
+              <span class="slot-stat-label">Booked</span>
+              <strong class="slot-stat-value" data-slots-booked>90</strong>
+            </div>
+            <div class="slot-stat slot-stat--open">
+              <span class="slot-stat-label">Slots left</span>
+              <strong class="slot-stat-value" data-slots-left>110</strong>
+            </div>
+          </div>
+          <div class="slot-progress">
+            <div class="slot-progress-head">
+              <span>Slots remaining</span>
+              <strong data-slots-percent>55%</strong>
+            </div>
+            <div class="slot-progress-track" role="progressbar" aria-label="Slots remaining" aria-valuemin="0" aria-valuemax="200" aria-valuenow="110" aria-valuetext="110 of 200 slots left, 55% remaining" data-slots-bar>
+              <span class="slot-progress-fill" data-slots-fill></span>
+            </div>
           </div>
         </div>
       </section>
