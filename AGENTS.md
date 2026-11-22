@@ -18,8 +18,10 @@ Dream Marathon 1.0/
 ├── scripts/             # build-gallery.mjs (regenerates the gallery manifest)
 ├── index.html           # Main entry point (contains embedded styles + HTML)
 ├── gallery.html         # Photo gallery page
+├── notices.html         # Noticeboard page for marathon announcements
 ├── style.css            # Homepage dark theme overrides and countdown styles
 ├── gallery.css          # Gallery page styles
+├── notices.css          # Noticeboard page styles
 ├── script.js            # Shared JS: mobile navigation, countdown, gallery rendering
 └── README.md            # Project documentation
 ```
@@ -27,6 +29,7 @@ Dream Marathon 1.0/
 ## Entry Points
 - **Main page**: `index.html` - Contains the full site structure and embedded CSS; uses `style.css` for the dark theme and `script.js` for behaviour
 - **Gallery page**: `gallery.html` - Renders photos listed in `gallery/photos.js`; uses `gallery.css` and `script.js`
+- **Noticeboard page**: `notices.html` - Announcements and updates; notices are edited directly in the `<article class="notice">` blocks; uses `notices.css` and `script.js`
 - **Styles**: `style.css` loaded after embedded styles (line ~343 in index.html); provides dark theme overrides
 
 ## Development
