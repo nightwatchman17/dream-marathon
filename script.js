@@ -79,7 +79,8 @@ if (slotsPanel) {
 
   if (Number.isFinite(total) && total > 0 && Number.isFinite(booked) && booked >= 0) {
     const left = Math.max(total - booked, 0);
-    const percent = Math.round((left / total) * 100);
+    const filled = Math.min(booked, total);
+    const percent = Math.round((filled / total) * 100);
 
     const setText = (selector, value) => {
       const element = slotsPanel.querySelector(selector);
@@ -93,8 +94,8 @@ if (slotsPanel) {
     const bar = slotsPanel.querySelector("[data-slots-bar]");
     if (bar) {
       bar.setAttribute("aria-valuemax", String(total));
-      bar.setAttribute("aria-valuenow", String(left));
-      bar.setAttribute("aria-valuetext", `${left} of ${total} slots left, ${percent}% remaining`);
+      bar.setAttribute("aria-valuenow", String(filled));
+      bar.setAttribute("aria-valuetext", `${filled} of ${total} slots booked, ${percent}% filled`);
     }
     const fill = slotsPanel.querySelector("[data-slots-fill]");
     if (fill) fill.style.width = `${Math.min(percent, 100)}%`;
