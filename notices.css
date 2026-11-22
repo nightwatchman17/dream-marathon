@@ -68,7 +68,7 @@ button { font: inherit; }
 .nav-links { display: flex; align-items: center; gap: 38px; }
 .nav-links a {
   color: #c1cdc4;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   transition: color .2s ease;
@@ -94,8 +94,8 @@ button { font: inherit; }
 }
 .social-link {
   flex: none;
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   display: grid;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, .3);
@@ -105,7 +105,7 @@ button { font: inherit; }
   box-shadow: 0 4px 14px rgba(8, 67, 155, .38), inset 0 1px 0 rgba(255, 255, 255, .28);
   transition: color .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease;
 }
-.social-link svg { width: 25px; height: 25px; }
+.social-link svg { width: 27px; height: 27px; }
 .social-link:hover {
   color: #fff;
   border-color: rgba(255, 255, 255, .7);
@@ -284,8 +284,8 @@ a:focus-visible, button:focus-visible {
   .site-header { height: 72px; padding: 0 6%; }
   .header-actions { order: 2; margin-left: auto; gap: 0; }
   .menu-toggle { order: 3; display: grid; place-items: center; }
-  .social-link { width: 44px; height: 44px; }
-  .social-link svg { width: 24px; height: 24px; }
+  .social-link { width: 38px; height: 38px; }
+  .social-link svg { width: 25px; height: 25px; }
   .nav-links {
     display: none;
     position: absolute;
