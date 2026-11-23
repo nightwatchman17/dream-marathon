@@ -298,26 +298,29 @@ body {
   border: 1px solid rgba(255, 122, 132, .26);
   border-left: 3px solid #ff6472;
   border-radius: 12px;
-  background: linear-gradient(90deg, rgba(255, 95, 109, .1), rgba(255, 95, 109, .03));
+  background: linear-gradient(90deg, rgba(255, 95, 109, .12), rgba(255, 95, 109, .04));
+  box-shadow: 0 0 26px rgba(255, 95, 109, .16), inset 0 1px rgba(255, 255, 255, .04);
   color: #ffe3e6;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
 }
 .slots-deadline strong {
   margin-right: 6px;
   color: #ff8b95;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: .14em;
   text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(255, 100, 114, .4);
 }
 .slots-deadline time {
   color: #fff;
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: clamp(17px, 1.8vw, 20px);
   font-weight: 700;
   letter-spacing: -.02em;
+  text-shadow: 0 0 18px rgba(255, 100, 114, .55);
 }
 
 .slot-stats {
@@ -614,7 +617,7 @@ a:focus-visible, button:focus-visible {
     gap: 20px;
   }
   .slots-deadline { padding: 12px 14px; }
-  .slots-deadline time { font-size: 14px; }
+  .slots-deadline time { font-size: 17px; }
   .slot-stat { padding: 0 11px; }
   .slot-stat-label { font-size: 9px; letter-spacing: .1em; }
   .slot-stat-value { font-size: clamp(24px, 7vw, 32px); }
