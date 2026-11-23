@@ -208,6 +208,67 @@ body {
   letter-spacing: .12em;
 }
 
+.deadline-alert {
+  margin: 16px 7.2% 0;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(255, 96, 110, .55);
+  border-radius: 16px;
+  background: linear-gradient(112deg, rgba(122, 27, 40, .82), rgba(64, 16, 26, .92));
+  box-shadow: 0 12px 35px rgba(90, 12, 25, .28), inset 0 1px rgba(255, 190, 190, .12);
+}
+.deadline-icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 100, 113, .16);
+  color: #ff9aa2;
+}
+.deadline-icon svg { width: 22px; height: 22px; }
+.deadline-copy { min-width: 0; }
+.deadline-kicker {
+  margin: 0 0 4px;
+  color: #ff9aa2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.deadline-message {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.8vw, 20px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.25;
+}
+.deadline-message strong { color: #fff; }
+.deadline-link {
+  flex: none;
+  margin-left: auto;
+  min-height: 44px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 999px;
+  background: #ff6472;
+  color: #2a060c;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s ease, transform .2s ease;
+}
+.deadline-link:hover { background: #ff8390; transform: translateY(-1px); }
+.deadline-link svg { width: 14px; height: 14px; }
+
 .countdown {
   margin: 20px 7.2% 0;
   padding: 27px 34px;
@@ -537,6 +598,7 @@ a:focus-visible, button:focus-visible {
 
 @media (max-width: 900px) {
   .big-news { margin-right: 5%; margin-left: 5%; padding: 26px; gap: 17px; }
+  .deadline-alert { margin-right: 5%; margin-left: 5%; padding: 16px 18px; }
   .news-message h2 { font-size: clamp(24px, 3.8vw, 34px); }
   .nav-links { gap: 14px; }
   .nav-links .nav-cta { padding: 11px 14px; font-size: 13px; white-space: nowrap; }
@@ -583,6 +645,15 @@ a:focus-visible, button:focus-visible {
   .news-message h2 { max-width: 440px; font-size: clamp(29px, 8.5vw, 39px); }
   .news-link { grid-column: 1; justify-self: start; min-width: 175px; min-height: 62px; padding: 0 25px; font-size: 15px; }
   .news-index { right: 17px; bottom: 15px; }
+  .deadline-alert {
+    margin: 14px 5% 0;
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .deadline-icon { width: 38px; height: 38px; }
+  .deadline-icon svg { width: 20px; height: 20px; }
+  .deadline-link { width: 100%; margin-left: 0; }
   .countdown {
     margin-top: 17px;
     padding: 22px 18px 24px;
