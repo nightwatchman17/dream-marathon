@@ -292,44 +292,32 @@ body {
     inset 0 1px 0 rgba(201, 255, 83, .22),
     0 18px 40px rgba(4, 12, 22, .38);
 }
-.slots .section-kicker {
-  margin: 0 0 9px;
-  color: #93b8ff;
-}
-.slots-title {
-  margin: 0 0 8px;
-  color: #f3f7ff;
-  font-size: clamp(21px, 2.5vw, 29px);
-  line-height: 1.15;
-  letter-spacing: -.045em;
-}
-.slots-note {
-  margin: 0;
-  color: #9fb0c9;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
 .slots-deadline {
-  margin: 14px 0 0;
+  margin: 0;
   display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  color: #ffb3ba;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.5;
+  align-items: center;
+  gap: 12px;
+  color: #ff9aa4;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.25;
+  text-shadow: 0 0 22px rgba(255, 95, 109, .35);
 }
-.slots-deadline strong { color: #ff6b78; font-weight: 800; }
+.slots-deadline strong { color: #ff5f6d; font-weight: 800; }
+.slots-deadline time { color: #fff; }
 .slots-deadline-dot {
   flex: none;
-  width: 8px;
-  height: 8px;
-  margin-top: 5px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #ff5f6d;
-  box-shadow: 0 0 10px rgba(255, 95, 109, .85);
+  box-shadow: 0 0 0 5px rgba(255, 95, 109, .14), 0 0 18px rgba(255, 95, 109, .9);
+  animation: deadline-pulse 1.8s ease-in-out infinite;
+}
+@keyframes deadline-pulse {
+  50% { box-shadow: 0 0 0 9px rgba(255, 95, 109, 0), 0 0 24px rgba(255, 95, 109, 1); }
 }
 
 .slot-stats {
@@ -625,9 +613,7 @@ a:focus-visible, button:focus-visible {
     border-radius: 15px;
     gap: 20px;
   }
-  .slots-title { font-size: clamp(20px, 5.6vw, 25px); }
-  .slots-note { font-size: 10px; }
-  .slots-deadline { margin-top: 11px; font-size: 11px; }
+  .slots-deadline { font-size: clamp(17px, 5vw, 22px); }
   .slot-stat { padding: 0 11px; }
   .slot-stat-label { font-size: 9px; letter-spacing: .1em; }
   .slot-stat-value { font-size: clamp(24px, 7vw, 32px); }
