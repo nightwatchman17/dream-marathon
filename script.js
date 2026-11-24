@@ -254,8 +254,8 @@ const registrationDialogMarkup = `
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v11H5zM12 15v2"/></svg>
     </div>
     <p class="registration-dialog__eyebrow">Dream Marathon 2026</p>
-    <h2 id="registration-dialog-title">Registration is closed</h2>
-    <p class="registration-dialog__copy" id="registration-dialog-copy">All 200 slots are filled. Thank you for the incredible response — follow the noticeboard for event updates.</p>
+    <h2 id="registration-dialog-title">All slots are booked</h2>
+    <p class="registration-dialog__copy" id="registration-dialog-copy">Registration is closed. All slots are booked. Thank you for the incredible response — follow the noticeboard for event updates.</p>
     <button class="registration-dialog__close" type="button" data-registration-dialog-close>Got it</button>
   </div>
 </dialog>`;
@@ -275,7 +275,7 @@ document.addEventListener("click", (event) => {
     if (!registrationDialog.open && typeof registrationDialog.showModal === "function") {
       registrationDialog.showModal();
     } else if (!registrationDialog.open) {
-      window.alert("Registration is closed — all 200 slots are filled.");
+      window.alert("Registration is closed. All slots are booked.");
     }
     return;
   }

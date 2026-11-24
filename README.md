@@ -1,6 +1,6 @@
 # Dream Marathon Spirit
 
-A responsive community website for **Dream Marathon Spirit**, announcing Dream Marathon 2026. Registration is now closed because all 200 slots are filled.
+A responsive community website for **Dream Marathon Spirit**, announcing Dream Marathon 2026. Registration is now closed because all slots are booked.
 
 ## Live website
 
