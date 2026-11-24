@@ -341,6 +341,7 @@
     }
   </style>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="registration.css">
 </head>
 <body>
   <div class="page-shell">
@@ -373,14 +374,14 @@
           <p class="news-kicker">The starting line is getting closer</p>
           <h2 id="news-title">Dream Marathon 2026 <span>is coming soon.</span></h2>
         </div>
-        <a class="news-link" href="https://forms.gle/8o8HJQmVtt72QehG7" target="_blank" rel="noopener noreferrer">
-          Register Now !
+        <button class="news-link" type="button" data-registration-closed>
+          Registration closed
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           <span class="news-spark news-spark--one" aria-hidden="true">✦</span>
           <span class="news-spark news-spark--two" aria-hidden="true">✧</span>
           <span class="news-spark news-spark--three" aria-hidden="true">✦</span>
           <span class="news-spark news-spark--four" aria-hidden="true">✧</span>
-        </a>
+        </button>
         <span class="news-index" aria-hidden="true">01 / 01</span>
       </section>
 
@@ -414,11 +415,12 @@
         </div>
       </section>
 
-      <section class="slots" aria-labelledby="slots-title" data-total="200" data-booked="178">
+      <section class="slots" aria-labelledby="slots-title" data-total="200" data-booked="200" data-registration-closed>
         <div class="slots-copy">
-          <p class="slots-deadline" id="slots-title" role="alert">
-            <strong>Deadline:</strong> <time datetime="2026-11-24T16:00:00+06:00">24 November 2026 (Tomorrow), 4 PM</time>
-          </p>
+          <div class="slots-status" id="slots-title" role="status">
+            <strong>Registration closed</strong>
+            <span>All 200 slots are filled.</span>
+          </div>
         </div>
         <div class="slots-details">
           <div class="slot-stats">
@@ -428,19 +430,19 @@
             </div>
             <div class="slot-stat">
               <span class="slot-stat-label">Booked</span>
-              <strong class="slot-stat-value" data-slots-booked>178</strong>
+              <strong class="slot-stat-value" data-slots-booked>200</strong>
             </div>
             <div class="slot-stat slot-stat--open">
               <span class="slot-stat-label">Slots left</span>
-              <strong class="slot-stat-value" data-slots-left>22</strong>
+              <strong class="slot-stat-value" data-slots-left>0</strong>
             </div>
           </div>
           <div class="slot-progress">
             <div class="slot-progress-head">
               <span>Slots filled</span>
-              <strong data-slots-percent>89%</strong>
+              <strong data-slots-percent>100%</strong>
             </div>
-            <div class="slot-progress-track" role="progressbar" aria-label="Slots filled" aria-valuemin="0" aria-valuemax="200" aria-valuenow="178" aria-valuetext="178 of 200 slots booked, 89% filled" data-slots-bar>
+            <div class="slot-progress-track" role="progressbar" aria-label="Slots filled" aria-valuemin="0" aria-valuemax="200" aria-valuenow="200" aria-valuetext="200 of 200 slots booked, 100% filled" data-slots-bar>
               <span class="slot-progress-fill" data-slots-fill></span>
             </div>
           </div>
@@ -452,11 +454,11 @@
           <p class="eyebrow">A community that moves together</p>
           <h1 id="hero-title">Run for Dream<br>Run for <em>Education</em></h1>
           <p class="hero-description">Every great journey starts with one step. Find your people, discover your pace, and be part of something bigger with Dream Marathon 2026!</p>
-          <a class="button" href="https://forms.gle/8o8HJQmVtt72QehG7" target="_blank" rel="noopener noreferrer">
-            Join the community
+          <button class="button" type="button" data-registration-closed>
+            Registration closed
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <p class="hero-note">Dream Marathon 2026 is coming soon. Your story starts here.</p>
+          </button>
+          <p class="hero-note">Dream Marathon 2026 is coming soon. Follow the journey as we get ready to run together.</p>
         </div>
         <figure class="hero-visual">
           <img class="hero-photo" src="./photos/cover_2.png" alt="Dream Marathon Spirit artwork featuring three runners" fetchpriority="high">
@@ -529,14 +531,14 @@
         <div>
           <p class="section-kicker">The first chapter</p>
           <h2 id="event-title">Dream Marathon 2026<br>is coming soon.</h2>
-          <p class="event-copy">Be part of the beginning. Share your details through our registration form and stay connected as we get ready to run together.</p>
+          <p class="event-copy">Registration for the 11 December 2026 run is now closed. Follow our updates as we get ready to run together.</p>
         </div>
         <div class="event-action">
-          <a class="button" href="https://forms.gle/8o8HJQmVtt72QehG7" target="_blank" rel="noopener noreferrer">
-            Open registration form
+          <button class="button" type="button" data-registration-closed>
+            Registration closed
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <p>Registration opens in Google Forms ↗</p>
+          </button>
+          <p>All 200 slots are filled.</p>
         </div>
       </section>
     </main>

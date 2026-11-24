@@ -244,3 +244,46 @@ if (galleryStrip && galleryViewer) {
     }
   }
 }
+
+/* Registration closed ---------------------------------------------------- */
+/* All registration calls to action share this dialog. No form links remain. */
+const registrationDialogMarkup = `
+<dialog class="registration-dialog" id="registration-dialog" aria-labelledby="registration-dialog-title" aria-describedby="registration-dialog-copy">
+  <div class="registration-dialog__panel">
+    <div class="registration-dialog__badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v11H5zM12 15v2"/></svg>
+    </div>
+    <p class="registration-dialog__eyebrow">Dream Marathon 2026</p>
+    <h2 id="registration-dialog-title">Registration is closed</h2>
+    <p class="registration-dialog__copy" id="registration-dialog-copy">All 200 slots are filled. Thank you for the incredible response — follow the noticeboard for event updates.</p>
+    <button class="registration-dialog__close" type="button" data-registration-dialog-close>Got it</button>
+  </div>
+</dialog>`;
+
+if (!document.querySelector("#registration-dialog")) {
+  document.body.insertAdjacentHTML("beforeend", registrationDialogMarkup);
+}
+
+const registrationDialog = document.querySelector("#registration-dialog");
+
+document.addEventListener("click", (event) => {
+  const target = event.target instanceof Element ? event.target : null;
+  if (!target || !registrationDialog) return;
+
+  if (target.closest("[data-registration-closed]")) {
+    event.preventDefault();
+    if (!registrationDialog.open && typeof registrationDialog.showModal === "function") {
+      registrationDialog.showModal();
+    } else if (!registrationDialog.open) {
+      window.alert("Registration is closed — all 200 slots are filled.");
+    }
+    return;
+  }
+
+  if (target.closest("[data-registration-dialog-close]")) {
+    registrationDialog.close();
+    return;
+  }
+
+  if (target === registrationDialog) registrationDialog.close();
+});
